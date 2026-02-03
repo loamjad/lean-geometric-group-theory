@@ -27,7 +27,7 @@ def reverseEdge {S : Set G} (prop : IsCayleyProperty S)
 
 
 open Quiver
-
+/-the following is incomplete-/
 theorem Isconnected {S : Set G} (prop : IsCayleyProperty S) :
     ∀ g h : CayleyGraph G S, Nonempty (path (CayleyGraph G S) g h) := by
   intro g h
