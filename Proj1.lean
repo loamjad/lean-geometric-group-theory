@@ -29,9 +29,3 @@ instance (c : CayleyGraph) : Quiver c.G where
 theorem goesto_e (c : CayleyGraph) :
 ∀ {x : c.G}, x ∈ Subgroup.closure c.S.S → Nonempty (Quiver.Path x (1 : c.G) ) :=  --i dont like lean
 sorry
-
-
-
-
-
---subgroup.closure_induction will help here. wildly
