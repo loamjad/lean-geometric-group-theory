@@ -105,4 +105,15 @@ theorem Isconnected {G : Type*} [Group G] {S : Set G} (prop : IsCayleyProperty S
     rw [one_mul] at p_final_raw
     exact p_final_raw
   exact ⟨p_final⟩
+
+noncomputable def wordLength {G : Type*} [Group G] {S : Set G} (prop : IsCayleyProperty S) (g : G) : ℕ :=
+  let lengths := {n : ℕ | ∃ p : Quiver.Path (V := CayleyGraph G S) ⟨1⟩ ⟨g⟩, p.length = n}
+  sInf lengths
+
+
+noncomputable def wordDist {G : Type*} [Group G] {S : Set G} (prop : IsCayleyProperty S) (g h : G) : ℕ :=
+  wordLength prop (g⁻¹ * h)
+
+
+
 end CayleyGraph
